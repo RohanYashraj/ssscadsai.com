@@ -38,19 +38,19 @@ export const siteContent = {
       "Whether you are exploring AI, running a traditional actuarial function, or building capability, we route you to the right depth of support.",
     items: [
       {
-        title: "Insurance leaders",
+        title: "Professional bodies & Leaders",
         description:
-          "Looking for future-looking AI initiatives that still respect regulatory and risk constraints.",
+          "Strategic guidance on AI adoption that balances innovation with regulatory rigor and professional standards.",
       },
       {
-        title: "Actuarial teams",
+        title: "Corporate actuarial teams",
         description:
-          "Need support on core work—pricing, reserving, capital—plus access to better tooling and automation.",
+          "Practical tools and workflows to integrate AI into core functions\u2014pricing, reserving, and risk management.",
       },
       {
-        title: "Professionals & learners",
+        title: "Learners",
         description:
-          "Want to deeply understand AI in actuarial practice and keep up with emerging methods.",
+          "Structured paths for upskilling, including specialized AI certifications designed specifically for the actuarial context.",
       },
     ] as const,
   },
