@@ -24,7 +24,7 @@ export const subBrands: SubBrand[] = [
     headline: "Agentic systems for insurance and actuarial innovation",
     description:
       "Prototype and deploy non-traditional, AI-native workflows for underwriting, pricing, forecasting, and internal operations.",
-    url: "https://maestrosai.in/",
+    url: "https://maestrosai.vercel.app/",
     accent: "sage",
     image:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
