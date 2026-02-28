@@ -1,3 +1,14 @@
+import { cn } from "@/lib/utils";
+import { siteContent } from "@/lib/site-content";
+import { subBrands, type SubBrandAccent } from "@/lib/sub-brands";
+
+const accentTextClass: Record<SubBrandAccent, string> = {
+  emerald: "text-emerald-500",
+  sky: "text-sky-500",
+  amber: "text-amber-500",
+  fuchsia: "text-fuchsia-500",
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -30,32 +41,30 @@ export default function Home() {
         >
           <div className="space-y-6">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-500">
-              Insurance · Actuarial · AI
+              {siteContent.hero.kicker}
             </p>
             <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-              One hub for{" "}
+              {siteContent.hero.titlePrefix}
               <span className="underline decoration-emerald-500 decoration-2 underline-offset-4">
-                modern actuarial
-              </span>{" "}
-              &amp; AI.
+                {siteContent.hero.titleHighlight}
+              </span>
+              {siteContent.hero.titleSuffix}
             </h1>
             <p className="max-w-xl text-balance text-base leading-7 text-muted-foreground md:text-lg">
-              A single entry point into four focused offerings: agentic AI
-              solutions, tech-enabled actuarial services, professional AI
-              workshops, and a Sutra-style blog to demystify complex topics.
+              {siteContent.hero.body}
             </p>
             <div className="flex flex-wrap gap-3 text-sm">
               <a
-                href="#brands"
+                href={siteContent.hero.primaryCta.href}
                 className="inline-flex items-center rounded-full bg-foreground px-6 py-2 text-background transition-colors hover:bg-foreground/90"
               >
-                Explore the four pillars
+                {siteContent.hero.primaryCta.label}
               </a>
               <a
-                href="#audiences"
+                href={siteContent.hero.secondaryCta.href}
                 className="inline-flex items-center rounded-full border border-border px-6 py-2 text-sm text-muted-foreground transition-colors hover:border-foreground hover:text-foreground"
               >
-                See who this is for
+                {siteContent.hero.secondaryCta.label}
               </a>
             </div>
           </div>
@@ -63,42 +72,22 @@ export default function Home() {
           <div className="relative">
             <div className="pointer-events-none absolute -inset-8 -z-10 rounded-3xl bg-linear-to-br from-emerald-500/10 via-transparent to-sky-500/10 blur-2xl" />
             <div className="grid gap-4 rounded-3xl border bg-card/80 p-6 shadow-sm backdrop-blur-sm sm:grid-cols-2">
-              <div className="space-y-1 rounded-2xl border bg-background/80 p-4">
-                <p className="text-xs font-medium text-emerald-500">
-                  Maestros AI
-                </p>
-                <p className="text-sm font-medium">
-                  Agentic solutions for non-traditional, future-looking
-                  insurance and actuarial work.
-                </p>
-              </div>
-              <div className="space-y-1 rounded-2xl border bg-background/80 p-4">
-                <p className="text-xs font-medium text-sky-500">
-                  Tech Actuarial
-                </p>
-                <p className="text-sm font-medium">
-                  Core actuarial services tightly integrated with data science
-                  and modern tooling.
-                </p>
-              </div>
-              <div className="space-y-1 rounded-2xl border bg-background/80 p-4">
-                <p className="text-xs font-medium text-amber-500">
-                  Workshops &amp; AI Certification
-                </p>
-                <p className="text-sm font-medium">
-                  Practical, industry-grade workshops for professionals
-                  applying AI in actuarial practice.
-                </p>
-              </div>
-              <div className="space-y-1 rounded-2xl border bg-background/80 p-4">
-                <p className="text-xs font-medium text-fuchsia-500">
-                  Sutra Blog
-                </p>
-                <p className="text-sm font-medium">
-                  Long-form explanations that keep the math intact but make the
-                  ideas approachable.
-                </p>
-              </div>
+              {subBrands.map((brand) => (
+                <div
+                  key={brand.id}
+                  className="space-y-1 rounded-2xl border bg-background/80 p-4"
+                >
+                  <p
+                    className={cn(
+                      "text-xs font-medium",
+                      accentTextClass[brand.accent]
+                    )}
+                  >
+                    {brand.name}
+                  </p>
+                  <p className="text-sm font-medium">{brand.tagline}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -116,66 +105,27 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <article className="flex flex-col justify-between rounded-3xl border bg-card/80 p-6 shadow-sm">
-              <div className="space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-500">
-                  Maestros AI
-                </p>
-                <h3 className="text-lg font-semibold">
-                  Agentic systems for insurance and actuarial innovation
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Prototype and deploy non-traditional, AI-native workflows for
-                  underwriting, pricing, forecasting, and internal operations.
-                </p>
-              </div>
-            </article>
-
-            <article className="flex flex-col justify-between rounded-3xl border bg-card/80 p-6 shadow-sm">
-              <div className="space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sky-500">
-                  Tech Actuarial
-                </p>
-                <h3 className="text-lg font-semibold">
-                  Traditional actuarial, upgraded with data science
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  End-to-end actuarial support—reserving, pricing, capital,
-                  reporting—grounded in rigorous methods and supported by modern
-                  data pipelines.
-                </p>
-              </div>
-            </article>
-
-            <article className="flex flex-col justify-between rounded-3xl border bg-card/80 p-6 shadow-sm">
-              <div className="space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-500">
-                  Workshops &amp; AI Certification
-                </p>
-                <h3 className="text-lg font-semibold">
-                  Upskilling for actuarial teams and leaders
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Hands-on, tool-agnostic workshops and certification paths
-                  that connect AI concepts to day-to-day actuarial work.
-                </p>
-              </div>
-            </article>
-
-            <article className="flex flex-col justify-between rounded-3xl border bg-card/80 p-6 shadow-sm">
-              <div className="space-y-3">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-fuchsia-500">
-                  Sutra Blog
-                </p>
-                <h3 className="text-lg font-semibold">
-                  Deep dives without the jargon
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Essays and walkthroughs that turn dense, technical topics into
-                  clear, structured narratives—without skipping the details.
-                </p>
-              </div>
-            </article>
+            {subBrands.map((brand) => (
+              <article
+                key={brand.id}
+                className="flex flex-col justify-between rounded-3xl border bg-card/80 p-6 shadow-sm"
+              >
+                <div className="space-y-3">
+                  <p
+                    className={cn(
+                      "text-xs font-semibold uppercase tracking-[0.25em]",
+                      accentTextClass[brand.accent]
+                    )}
+                  >
+                    {brand.name}
+                  </p>
+                  <h3 className="text-lg font-semibold">{brand.headline}</h3>
+                  <p className="text-sm text-muted-foreground">
+                    {brand.description}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 

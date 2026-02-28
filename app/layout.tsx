@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { siteContent } from "@/lib/site-content";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Actuarial & AI Hub",
-  description:
-    "Single-page hub connecting Maestros AI, Tech Actuarial, Workshops & AI Certification, and Sutra Blog for modern actuarial and AI solutions.",
+  title: siteContent.meta.title,
+  description: siteContent.meta.description,
 };
 
 export default function RootLayout({
