@@ -5,8 +5,7 @@ export const siteContent = {
   fullName:
     "Sri Sathya Sai Center of Excellence in Actuarial Data Science & AI",
   meta: {
-    title:
-      "SSSCADSAI | Sri Sathya Sai Center of Excellence in Actuarial Data Science & AI",
+    title: "Sri Sathya Sai Center of Excellence in Actuarial Data Science & AI",
     description:
       "Sri Sathya Sai Center of Excellence in Actuarial Data Science & AI. One hub for Maestros AI, Tech Actuarial, Workshops & AI Certification, and Sutra Blog—blending tradition with innovation.",
     /** Set to your production URL for OG images and canonical links (e.g. "https://ssscadsai.com"). */
