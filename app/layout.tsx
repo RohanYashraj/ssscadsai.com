@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Syne, Geist } from "next/font/google";
+import { DM_Serif_Display, Libre_Franklin } from "next/font/google";
 import "./globals.css";
 import { siteContent } from "@/lib/site-content";
 import { Analytics } from "@/components/analytics";
 
-const syne = Syne({
+const dmSerif = DM_Serif_Display({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["400"],
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const libreFranklin = Libre_Franklin({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
 });
 
 const baseUrl = siteContent.meta.baseUrl || undefined;
@@ -60,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${syne.variable} ${geistSans.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${dmSerif.variable} ${libreFranklin.variable} font-sans antialiased bg-background text-foreground`}
       >
         <script
           type="application/ld+json"

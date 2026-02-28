@@ -5,7 +5,8 @@ export const siteContent = {
   fullName:
     "Sri Sathya Sai Center of Excellence in Actuarial Data Science & AI",
   meta: {
-    title: "SSSCADSAI | Sri Sathya Sai Center of Excellence in Actuarial Data Science & AI",
+    title:
+      "SSSCADSAI | Sri Sathya Sai Center of Excellence in Actuarial Data Science & AI",
     description:
       "Sri Sathya Sai Center of Excellence in Actuarial Data Science & AI. One hub for Maestros AI, Tech Actuarial, Workshops & AI Certification, and Sutra Blog—blending tradition with innovation.",
     /** Set to your production URL for OG images and canonical links (e.g. "https://ssscadsai.com"). */
@@ -16,14 +17,13 @@ export const siteContent = {
     titlePrefix: "Actuarial Data Science ",
     titleHighlight: "& AI",
     titleSuffix: ".",
-    body:
-      "One entry point to four pillars: agentic AI solutions, tech-enabled actuarial services, professional AI workshops, and Sutra Blog—clear, complete explanations of complex topics.",
+    body: "One entry point to four pillars: agentic AI solutions, tech-enabled actuarial services, professional AI workshops, and Sutra Blog—clear, complete explanations of complex topics.",
     primaryCta: {
       label: "Explore the four pillars",
       href: "#brands",
     },
     secondaryCta: {
-      label: "See who it's for",
+      label: "See who it\u2019s for",
       href: "#audiences",
     },
   },
@@ -64,14 +64,14 @@ export const siteContent = {
     ] as const,
   },
   footer: {
-    links: [
-      { label: "Back to top", href: "#hero" },
-    ] as const,
+    tagline: "Blending tradition with innovation in the AI era.",
+    links: [{ label: "Back to top", href: "#hero" }] as const,
   },
   nav: {
     links: [
-      { label: "Who it's for", href: "#audiences" },
+      { label: "Vision", href: "#vision" },
+      { label: "Pillars", href: "#brands" },
+      { label: "Audiences", href: "#audiences" },
     ] as const,
   },
 };
-

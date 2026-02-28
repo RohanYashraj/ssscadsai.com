@@ -1,4 +1,4 @@
-export type SubBrandAccent = "emerald" | "sky" | "amber" | "fuchsia";
+export type SubBrandAccent = "sage" | "terracotta" | "gold" | "slate";
 
 export interface SubBrand {
   id: string;
@@ -24,8 +24,8 @@ export const subBrands: SubBrand[] = [
     headline: "Agentic systems for insurance and actuarial innovation",
     description:
       "Prototype and deploy non-traditional, AI-native workflows for underwriting, pricing, forecasting, and internal operations.",
-    url: "#",
-    accent: "emerald",
+    url: "https://maestrosai.in/",
+    accent: "sage",
     image:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
   },
@@ -39,7 +39,7 @@ export const subBrands: SubBrand[] = [
     description:
       "End-to-end actuarial support—reserving, pricing, capital, reporting—grounded in rigorous methods and supported by modern data pipelines.",
     url: "https://techactuarial.com/",
-    accent: "sky",
+    accent: "terracotta",
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
   },
@@ -53,7 +53,7 @@ export const subBrands: SubBrand[] = [
     description:
       "Hands-on, tool-agnostic workshops and certification paths that connect AI concepts to day-to-day actuarial work.",
     url: "#",
-    accent: "amber",
+    accent: "gold",
     image:
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
   },
@@ -68,7 +68,7 @@ export const subBrands: SubBrand[] = [
     description:
       "Essays and walkthroughs that turn dense, technical topics into clear, structured narratives—without skipping the details.",
     url: "https://sutra.rohanyashraj.com/",
-    accent: "fuchsia",
+    accent: "slate",
     image:
       "https://images.unsplash.com/photo-1589998059171-988d887df646?w=800&q=80",
   },
