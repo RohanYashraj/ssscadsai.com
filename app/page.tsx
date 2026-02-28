@@ -97,6 +97,31 @@ export default function Home() {
         </section>
 
         <Section
+          id="vision"
+          className="section-block space-y-6 py-16 md:py-20 scroll-mt-24"
+        >
+          <div className="relative max-w-3xl pl-5 md:pl-6 border-l-2 border-brand/50">
+            <p className="font-display text-xs font-semibold uppercase tracking-[0.28em] text-brand">
+              Our Vision
+            </p>
+            <h2 className="font-display mt-2 text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl">
+              Vision statement
+            </h2>
+          </div>
+          <div className="max-w-3xl space-y-6 pl-5 md:pl-6 text-muted-foreground leading-relaxed md:text-lg">
+            <p>
+              To enable the actuarial profession to take a transformative leap by optimally integrating cutting-edge AI innovations with the depth and rigour of professional actuarial judgment.
+            </p>
+            <p>
+              We envision an ecosystem where every stakeholder—students, employees, employers, educators, professional bodies, and research communities—continuously upskills in emerging areas of Artificial Intelligence and data science.
+            </p>
+            <p>
+              Our platform aspires to serve as a single, integrated hub that brings together learning, collaboration, research, industry engagement, and professional development, empowering the actuarial world to lead with intelligence, ethics, and innovation in the AI era.
+            </p>
+          </div>
+        </Section>
+
+        <Section
           id="brands"
           className="section-block space-y-10 py-16 md:py-20 scroll-mt-24"
         >
@@ -126,73 +151,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </Section>
-
-        <Section
-          id="audiences"
-          className="section-block space-y-8 py-16 md:py-20 scroll-mt-24"
-        >
-          <div className="relative max-w-2xl pl-5 md:pl-6 border-l-2 border-brand/50">
-            <p className="font-display text-xs font-semibold uppercase tracking-[0.28em] text-brand">
-              Audiences
-            </p>
-            <h2 className="font-display mt-2 text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl">
-              {siteContent.audiences.heading}
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
-              {siteContent.audiences.subtext}
-            </p>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-3">
-            {siteContent.audiences.items.map((item, i) => (
-              <div
-                key={i}
-                className="animate-in fade-in slide-in-from-bottom-4 rounded-2xl border border-border/80 border-l-4 border-l-brand/60 bg-card/90 p-6 shadow-sm transition-[box-shadow,transform,border-color,background-color] duration-300 hover:-translate-y-0.5 hover:bg-card hover:shadow-lg hover:border-l-brand focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2"
-                style={{
-                  animationDelay: `${120 + i * 100}ms`,
-                  animationFillMode: "backwards",
-                }}
-              >
-                <h3 className="font-display text-base font-semibold tracking-tight text-foreground">
-                  {item.title}
-                </h3>
-                <p className="mt-2.5 text-sm text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        <Section
-          id="capabilities"
-          className="section-block space-y-8 py-16 md:py-20 scroll-mt-24"
-        >
-          <div className="relative max-w-2xl pl-5 md:pl-6 border-l-2 border-brand/50">
-            <p className="font-display text-xs font-semibold uppercase tracking-[0.28em] text-brand">
-              Capabilities
-            </p>
-            <h2 className="font-display mt-2 text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl">
-              {siteContent.capabilities.heading}
-            </h2>
-          </div>
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {siteContent.capabilities.items.map((item, i) => (
-              <li
-                key={i}
-                className="animate-in fade-in slide-in-from-bottom-3 rounded-2xl border border-border/80 border-l-2 border-l-brand/40 bg-card/90 px-5 py-4 text-sm shadow-sm transition-[box-shadow,transform,border-color,background-color] duration-300 hover:-translate-y-0.5 hover:bg-card hover:shadow-md hover:border-l-brand/70 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2"
-                style={{
-                  animationDelay: `${80 + i * 80}ms`,
-                  animationFillMode: "backwards",
-                }}
-              >
-                <span className="font-display font-medium tracking-tight text-foreground">
-                  {item}
-                </span>
-              </li>
-            ))}
-          </ul>
         </Section>
       </main>
 
