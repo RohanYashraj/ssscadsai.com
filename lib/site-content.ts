@@ -1,19 +1,23 @@
 export const siteContent = {
-  siteName: "Actuarial & AI Hub",
+  /** Short brand name used in header and footer. */
+  siteName: "SSSCADSAI",
+  /** Full name for taglines and SEO. */
+  fullName:
+    "Sri Sathya Sai Center of Excellence in Actuarial Data Science & AI",
   meta: {
-    title: "Actuarial & AI Hub",
+    title: "SSSCADSAI | Sri Sathya Sai Center of Excellence in Actuarial Data Science & AI",
     description:
-      "Single-page hub connecting Maestros AI, Tech Actuarial, Workshops & AI Certification, and Sutra Blog for modern actuarial and AI solutions.",
+      "Sri Sathya Sai Center of Excellence in Actuarial Data Science & AI. One hub for Maestros AI, Tech Actuarial, Workshops & AI Certification, and Sutra Blog—blending tradition with innovation.",
     /** Set to your production URL for OG images and canonical links (e.g. "https://ssscadsai.com"). */
     baseUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "",
   },
   hero: {
-    kicker: "Insurance · Actuarial · AI",
-    titlePrefix: "One hub for ",
-    titleHighlight: "modern actuarial",
-    titleSuffix: " & AI.",
+    kicker: "Sri Sathya Sai Center of Excellence",
+    titlePrefix: "Actuarial Data Science ",
+    titleHighlight: "& AI",
+    titleSuffix: ".",
     body:
-      "A single entry point into four focused offerings: agentic AI solutions, tech-enabled actuarial services, professional AI workshops, and a Sutra-style blog to demystify complex topics.",
+      "One entry point to four pillars: agentic AI solutions, tech-enabled actuarial services, professional AI workshops, and Sutra Blog—clear, complete explanations of complex topics.",
     primaryCta: {
       label: "Explore the four pillars",
       href: "#brands",
@@ -24,14 +28,14 @@ export const siteContent = {
     },
   },
   brands: {
-    heading: "Four focused pillars, one strategy",
+    heading: "Four pillars of the Center",
     subtext:
-      "Each sub-brand is intentionally scoped so you can adopt exactly what you need—from experimental agentic systems to traditional reporting, education, and thought leadership.",
+      "Each pillar is intentionally scoped—from agentic AI and non-traditional solutions to traditional actuarial work, education, and thought leadership.",
   },
   audiences: {
-    heading: "Designed for real actuarial stakeholders",
+    heading: "Who the Center serves",
     subtext:
-      "Whether you are experimenting with AI, running a traditional function, or building teams, this hub is meant to route you to the right depth of help.",
+      "Whether you are exploring AI, running a traditional actuarial function, or building capability, we route you to the right depth of support.",
     items: [
       {
         title: "Insurance leaders",
@@ -60,18 +64,13 @@ export const siteContent = {
     ] as const,
   },
   footer: {
-    tagline: "Central entry point for Maestros AI, Tech Actuarial, Workshops & AI Certification, and Sutra Blog.",
     links: [
-      { label: "View pillars", href: "#brands" },
       { label: "Back to top", href: "#hero" },
     ] as const,
   },
   nav: {
     links: [
-      { label: "Overview", href: "#hero" },
-      { label: "Pillars", href: "#brands" },
       { label: "Who it's for", href: "#audiences" },
-      { label: "Contact", href: "#contact" },
     ] as const,
   },
 };

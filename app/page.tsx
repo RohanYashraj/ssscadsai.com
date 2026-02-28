@@ -6,24 +6,24 @@ import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur supports-backdrop-filter:bg-background/60">
+    <div className="min-h-screen text-foreground page-bg page-bg-grid relative">
+      <header className="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-md supports-backdrop-filter:bg-background/80">
         <Section
           as="div"
           className="flex items-center justify-between py-4"
         >
-          <div className="text-sm font-medium tracking-[0.2em] uppercase text-muted-foreground">
+          <div className="font-display text-sm font-semibold tracking-[0.22em] uppercase text-primary">
             {siteContent.siteName}
           </div>
           <nav
-            className="hidden gap-6 text-sm text-muted-foreground md:flex"
+            className="hidden gap-8 text-sm text-muted-foreground md:flex"
             aria-label="Main navigation"
           >
             {siteContent.nav.links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                className="transition-colors duration-200 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
               >
                 {link.label}
               </a>
@@ -32,91 +32,82 @@ export default function Home() {
         </Section>
       </header>
 
-      <main className="flex flex-col gap-24 py-16 md:py-24">
-        <Section
+      <main className="flex flex-col gap-24">
+        <section
           id="hero"
-          className="grid items-center gap-12 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1.2fr)] animate-in fade-in slide-in-from-bottom-4 duration-700"
+          aria-label="Hero"
+          className="hero-bg relative overflow-hidden pt-16 pb-28 md:pt-24 md:pb-36"
         >
-          <div className="space-y-6">
-            <p
-              className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-500 animate-in fade-in slide-in-from-left-2 duration-500 delay-100"
-              style={{ animationFillMode: "backwards" }}
-            >
-              {siteContent.hero.kicker}
-            </p>
-            <h1
-              className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl animate-in fade-in slide-in-from-bottom-4 duration-600 delay-150"
-              style={{ animationFillMode: "backwards" }}
-            >
-              {siteContent.hero.titlePrefix}
-              <span className="underline decoration-emerald-500 decoration-2 underline-offset-4">
-                {siteContent.hero.titleHighlight}
-              </span>
-              {siteContent.hero.titleSuffix}
-            </h1>
-            <p
-              className="max-w-xl text-balance text-base leading-7 text-muted-foreground md:text-lg animate-in fade-in duration-600 delay-200"
-              style={{ animationFillMode: "backwards" }}
-            >
-              {siteContent.hero.body}
-            </p>
-            <div
-              className="flex flex-wrap gap-3 text-sm animate-in fade-in slide-in-from-bottom-2 duration-500 delay-300"
-              style={{ animationFillMode: "backwards" }}
-            >
-              <a
-                href={siteContent.hero.primaryCta.href}
-                className={buttonVariants({
-                  size: "lg",
-                  className: "rounded-full px-6",
-                })}
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="relative max-w-3xl pl-5 md:pl-6 border-l-2 border-brand/50">
+              <p
+                className="font-display text-xs font-semibold uppercase tracking-[0.32em] text-brand animate-in fade-in slide-in-from-bottom-3 duration-600 delay-75"
+                style={{ animationFillMode: "backwards" }}
               >
-                {siteContent.hero.primaryCta.label}
-              </a>
-              <a
-                href={siteContent.hero.secondaryCta.href}
-                className={buttonVariants({
-                  variant: "outline",
-                  size: "lg",
-                  className: "rounded-full px-6",
-                })}
+                {siteContent.hero.kicker}
+              </p>
+              <h1
+                className="font-display mt-4 text-balance text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[1.08] animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150"
+                style={{ animationFillMode: "backwards" }}
               >
-                {siteContent.hero.secondaryCta.label}
-              </a>
-            </div>
-          </div>
-
-          <div
-            className="relative animate-in fade-in slide-in-from-right-4 duration-700 delay-200"
-            style={{ animationFillMode: "backwards" }}
-          >
-            <div className="pointer-events-none absolute -inset-8 -z-10 rounded-3xl bg-linear-to-br from-emerald-500/10 via-transparent to-sky-500/10 blur-2xl" />
-            <div className="grid gap-4 rounded-3xl border bg-card/80 p-6 shadow-sm backdrop-blur-sm sm:grid-cols-2">
-              {subBrands.map((brand, i) => (
-                <div
-                  key={brand.id}
-                  className="animate-in fade-in slide-in-from-bottom-2 duration-500"
-                  style={{
-                    animationDelay: `${300 + i * 80}ms`,
-                    animationFillMode: "backwards",
-                  }}
+                {siteContent.hero.titlePrefix}
+                <span className="hero-highlight underline decoration-primary/40 decoration-2 underline-offset-6">
+                  {siteContent.hero.titleHighlight}
+                </span>
+                {siteContent.hero.titleSuffix}
+              </h1>
+              <p
+                className="mt-6 max-w-xl text-balance text-base leading-8 text-muted-foreground md:text-lg md:leading-8 animate-in fade-in slide-in-from-bottom-2 duration-600 delay-300"
+                style={{ animationFillMode: "backwards" }}
+              >
+                {siteContent.hero.body}
+              </p>
+              <div
+                className="mt-8 flex flex-wrap items-center gap-3 animate-in fade-in slide-in-from-bottom-3 duration-500 delay-400"
+                style={{ animationFillMode: "backwards" }}
+              >
+                <a
+                  href={siteContent.hero.primaryCta.href}
+                  className={buttonVariants({
+                    size: "lg",
+                    className:
+                      "rounded-full px-7 font-semibold shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]",
+                  })}
                 >
-                  <BrandCard brand={brand} compact />
-                </div>
-              ))}
+                  {siteContent.hero.primaryCta.label}
+                </a>
+                <a
+                  href={siteContent.hero.secondaryCta.href}
+                  className={buttonVariants({
+                    variant: "outline",
+                    size: "lg",
+                    className:
+                      "rounded-full px-7 font-medium transition-all duration-300 hover:border-primary/50 hover:text-foreground",
+                  })}
+                >
+                  {siteContent.hero.secondaryCta.label}
+                </a>
+              </div>
             </div>
           </div>
-        </Section>
+          <div
+            className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-background to-transparent pointer-events-none"
+            aria-hidden
+          />
+        </section>
 
         <Section
           id="brands"
-          className="space-y-6 scroll-mt-24"
+          className="section-block space-y-10 py-16 md:py-20 scroll-mt-24"
         >
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+          <div className="relative max-w-2xl pl-5 md:pl-6 border-l-2 border-brand/50">
+            <p className="font-display text-xs font-semibold uppercase tracking-[0.28em] text-brand">
+              Pillars
+            </p>
+            <h2 className="font-display mt-2 text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl">
               {siteContent.brands.heading}
             </h2>
-            <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
               {siteContent.brands.subtext}
             </p>
           </div>
@@ -125,9 +116,9 @@ export default function Home() {
             {subBrands.map((brand, i) => (
               <div
                 key={brand.id}
-                className="animate-in fade-in slide-in-from-bottom-3 duration-500"
+                className="animate-in fade-in slide-in-from-bottom-4 duration-600"
                 style={{
-                  animationDelay: `${i * 60}ms`,
+                  animationDelay: `${100 + i * 120}ms`,
                   animationFillMode: "backwards",
                 }}
               >
@@ -139,25 +130,34 @@ export default function Home() {
 
         <Section
           id="audiences"
-          className="space-y-6 scroll-mt-24"
+          className="section-block space-y-8 py-16 md:py-20 scroll-mt-24"
         >
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+          <div className="relative max-w-2xl pl-5 md:pl-6 border-l-2 border-brand/50">
+            <p className="font-display text-xs font-semibold uppercase tracking-[0.28em] text-brand">
+              Audiences
+            </p>
+            <h2 className="font-display mt-2 text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl">
               {siteContent.audiences.heading}
             </h2>
-            <p className="max-w-2xl text-sm text-muted-foreground md:text-base">
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
               {siteContent.audiences.subtext}
             </p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-3">
             {siteContent.audiences.items.map((item, i) => (
               <div
                 key={i}
-                className="rounded-2xl border bg-card/70 p-5 transition-colors hover:bg-card/90 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2"
+                className="animate-in fade-in slide-in-from-bottom-4 rounded-2xl border border-border/80 border-l-4 border-l-brand/60 bg-card/90 p-6 shadow-sm transition-[box-shadow,transform,border-color,background-color] duration-300 hover:-translate-y-0.5 hover:bg-card hover:shadow-lg hover:border-l-brand focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2"
+                style={{
+                  animationDelay: `${120 + i * 100}ms`,
+                  animationFillMode: "backwards",
+                }}
               >
-                <h3 className="text-sm font-semibold">{item.title}</h3>
-                <p className="mt-2 text-xs text-muted-foreground">
+                <h3 className="font-display text-base font-semibold tracking-tight text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mt-2.5 text-sm text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -167,20 +167,29 @@ export default function Home() {
 
         <Section
           id="capabilities"
-          className="space-y-6 scroll-mt-24"
+          className="section-block space-y-8 py-16 md:py-20 scroll-mt-24"
         >
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+          <div className="relative max-w-2xl pl-5 md:pl-6 border-l-2 border-brand/50">
+            <p className="font-display text-xs font-semibold uppercase tracking-[0.28em] text-brand">
+              Capabilities
+            </p>
+            <h2 className="font-display mt-2 text-2xl font-bold tracking-tight text-primary sm:text-3xl md:text-4xl">
               {siteContent.capabilities.heading}
             </h2>
           </div>
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {siteContent.capabilities.items.map((item, i) => (
               <li
                 key={i}
-                className="rounded-2xl border bg-card/70 px-4 py-3 text-sm"
+                className="animate-in fade-in slide-in-from-bottom-3 rounded-2xl border border-border/80 border-l-2 border-l-brand/40 bg-card/90 px-5 py-4 text-sm shadow-sm transition-[box-shadow,transform,border-color,background-color] duration-300 hover:-translate-y-0.5 hover:bg-card hover:shadow-md hover:border-l-brand/70 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2"
+                style={{
+                  animationDelay: `${80 + i * 80}ms`,
+                  animationFillMode: "backwards",
+                }}
               >
-                {item}
+                <span className="font-display font-medium tracking-tight text-foreground">
+                  {item}
+                </span>
               </li>
             ))}
           </ul>
@@ -189,26 +198,34 @@ export default function Home() {
 
       <footer
         id="contact"
-        className="mt-12 border-t bg-background/80 py-8 text-xs text-muted-foreground scroll-mt-24"
+        className="footer-bg relative mt-20 border-t border-border/80 bg-background/95 py-12 md:py-14 text-muted-foreground scroll-mt-24"
       >
-        <Section as="div" className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="font-medium text-foreground">
+        <Section as="div" className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-md space-y-2">
+            <p className="font-display text-sm font-semibold tracking-[0.18em] uppercase text-foreground">
               {siteContent.siteName}
             </p>
-            <p className="mt-1">{siteContent.footer.tagline}</p>
+            <p className="text-xs leading-relaxed text-muted-foreground/95">
+              {siteContent.fullName}
+            </p>
+            <p className="pt-1 text-xs leading-relaxed text-muted-foreground">
+              {siteContent.footer.tagline}
+            </p>
           </div>
-          <div className="flex flex-wrap gap-4">
+          <nav
+            className="flex flex-wrap gap-6 text-sm"
+            aria-label="Footer navigation"
+          >
             {siteContent.footer.links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                className="transition-colors duration-200 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
               >
                 {link.label}
               </a>
             ))}
-          </div>
+          </nav>
         </Section>
       </footer>
     </div>
